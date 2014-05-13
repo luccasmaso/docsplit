@@ -88,6 +88,9 @@ Options:
         opts.on('-d', '--density [NUM]', 'set image density (DPI) when rasterizing') do |d|
           @options[:density] = d
         end
+        opts.on('-d', '--quality [NUM]', 'set image quality') do |q|
+          @options[:quality] = q
+        end
         opts.on('--[no-]ocr', 'force OCR to be used, or disable OCR') do |o|
           @options[:ocr] = o
         end
