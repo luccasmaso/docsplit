@@ -23,7 +23,7 @@ module Docsplit
       unless @@version_string
         null = windows? ? "NUL" : "/dev/null"
         @@version_string = `#{office_executable} -h 2>#{null}`.split("\n").first
-        if !!@@version_string.match(/[0-9]*/)
+        if !!@@version_string.to_s.match(/[0-9]*/)
           @@version_string = `#{office_executable} --version`.split("\n").first
         end
       end
@@ -61,6 +61,10 @@ module Docsplit
           /usr/lib64/openoffice
           /opt/openoffice.org3
           /app/vendor/libreoffice
+          /usr/bin/libreoffice
+          /usr/local/bin
+          /usr/lib64/libreoffice
+          /usr/lib64/openoffice.org3
         )
       end
       search_paths
